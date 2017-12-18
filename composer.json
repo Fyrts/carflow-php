@@ -1,0 +1,25 @@
+{
+    "name": "fyrts/carflow-php",
+    "description": "API wrapper for Carflow.pro",
+    "license": "MIT",
+    "keywords": ["PHP", "API", "Carflow"],
+    "support": {
+        "issues": "https://github.com/fyrts/carflow-php/issues",
+        "source": "https://github.com/fyrts/carflow-php/"
+    },
+    "authors": [
+        {
+            "name": "Sam Feyaerts",
+            "email": "sam@feyaerts.me",
+            "homepage": "http://sam.feyaerts.me"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+		"ext-simplexml": "*",
+		"guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {"Carflow\\": "src"}
+    }
+}
