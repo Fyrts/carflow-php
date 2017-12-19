@@ -22,9 +22,7 @@ class Client extends HTTPClient
 			'includeDeletedVehicles' => $includeDeleted ? 'true' : 'false',
 			'since' => date('Y-m-d', $since)
 		]);
-		if (!isset($response->vehicle)) {
-			throw new ResponseException("Carflow XML could not be parsed.");
-		}
+		if (!isset($response->vehicle)) return [];
 
 		return Types\Vehicle::fromXMLChildren($response->vehicle, $describeProperties);
 	}

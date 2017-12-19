@@ -40,9 +40,7 @@ class HTTPClient
 		if (is_null($classname)) $classname = $name;
 
 		$response = $this->makeRequest($method);
-		if (!isset($response->$name)) {
-			throw new ResponseException("Carflow XML could not be parsed.");
-		}
+		if (!isset($response->$name)) return [];
 
 		$classname = __NAMESPACE__."\\Types\\{$classname}";
 		return $classname::fromXMLChildren($response->$name, false);
